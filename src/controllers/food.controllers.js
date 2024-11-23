@@ -1,11 +1,11 @@
 import Food from "../models/food.models.js";
 
-const renderAllFoods = async (req, res) => {
+const renderFoods = async (req, res) => {
   try {
     const foods = await Food.find();
     res.status(200).json(foods);
   } catch (error) {
-    res.status(400).json({ error: error });
+    res.status(400).json({ message: error });
   }
 };
 const addFood = async (req, res) => {
@@ -16,7 +16,7 @@ const addFood = async (req, res) => {
 
     res.status(201).json({ message: "Food added" });
   } catch (error) {
-    res.status(400).json({ error: error });
+    res.status(400).json({ message: error });
   }
 };
 const updateFood = async (req, res) => {
@@ -27,7 +27,7 @@ const updateFood = async (req, res) => {
 
     res.status(202).json({ message: "Updated" });
   } catch (error) {
-    res.status(400).json({ error: error });
+    res.status(400).json({ message: error });
   }
 };
 const deleteFood = async (req, res) => {
@@ -38,8 +38,8 @@ const deleteFood = async (req, res) => {
 
     res.status(204).json({ message: "Deleted" });
   } catch (error) {
-    res.status(400).json({ error: error });
+    res.status(400).json({ message: error });
   }
 };
 
-export {renderAllFoods, addFood, updateFood, deleteFood}
+export {renderFoods, addFood, updateFood, deleteFood}
