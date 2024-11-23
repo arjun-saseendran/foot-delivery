@@ -10,7 +10,7 @@ const router = Router();
 
 router.get("/", renderRestaurants);
 router.post("/", addRestaurant);
-router.put("/", updateRestaurant);
-router.delete("/", deleteRestaurant);
+router.put("/:id", updateRestaurant);
+router.delete("/:id", deleteRestaurant);
 
 export default router;

@@ -1,4 +1,4 @@
-import Food from "../models/food.models.js";
+import {Food} from "../models/food.models.js";
 
 const renderFoods = async (req, res) => {
   try {
@@ -10,8 +10,8 @@ const renderFoods = async (req, res) => {
 };
 const addFood = async (req, res) => {
   try {
-    const { title, category, price, description } = req.body;
-    const food = new Food({ title, category, price, description });
+    const { title, image, category, price, description, isAvailable } = req.body;
+    const food = new Food({ title, image, category, price, description, isAvailable });
     food.save()
 
     res.status(201).json({ message: "Created" });

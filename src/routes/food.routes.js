@@ -10,7 +10,7 @@ const router = Router();
 
 router.get("/", renderFoods);
 router.post("/", addFood);
-router.put("/", updateFood);
-router.delete("/", deleteFood);
+router.put("/:id", updateFood);
+router.delete("/:id", deleteFood);
 
 export default router
