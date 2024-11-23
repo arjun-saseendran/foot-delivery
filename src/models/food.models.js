@@ -20,7 +20,8 @@ const foodSchema =  new Schema({
     isAvailable:{
         type: Boolean,
         default: true
-    }
+    },
+    
 })
 
 export const Food = mongoose.model('food', foodSchema)
