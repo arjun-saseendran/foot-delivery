@@ -12,7 +12,7 @@ const addFood = async (req, res) => {
   try {
     const { title, category, price, description } = req.body;
     const food = new Food({ title, category, price, description });
-    food.save().then((response) => console.log(response));
+    food.save()
 
     res.status(201).json({ message: "Food added" });
   } catch (error) {
