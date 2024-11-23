@@ -27,3 +27,14 @@ const updateRestaurant = async (req, res) => {
     res.status(400).json({ message: error });
   }
 };
+const deleteRestaurant = async (req, res) => {
+  try {
+    const { id } = req.params;
+    await Restaurant.findByIdAndDelete(id);
+    res.status(202).json({ message: "Deleted" });
+  } catch (error) {
+    res.status(400).json({ message: error });
+  }
+};
+
+export {renderRestaurants, addRestaurant, updateRestaurant, deleteRestaurant}
