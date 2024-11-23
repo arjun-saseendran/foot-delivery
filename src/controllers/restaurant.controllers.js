@@ -18,3 +18,12 @@ const addRestaurant = async (req, res) => {
     res.status(400).json({ message: error });
   }
 };
+const updateRestaurant = async (req, res) => {
+  try {
+    const { id } = req.params;
+    await Restaurant.findByIdAndUpdate(id, req.body);
+    res.status(202).json({ message: "Updated" });
+  } catch (error) {
+    res.status(400).json({ message: error });
+  }
+};
