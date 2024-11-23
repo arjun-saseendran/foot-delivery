@@ -10,10 +10,10 @@ const renderRestaurants = async (req, res) => {
 };
 const addRestaurant = async (req, res) => {
   try {
-    const { title, address } = req.body;
-    const restaurant = new Restaurant({ title, address });
+    const { title, address, foods } = req.body;
+    const restaurant = new Restaurant({ title, address, foods });
     await restaurant.save();
-    res.status(201).json({ message: "Added" });
+    res.status(201).json({ message: "Created" });
   } catch (error) {
     res.status(400).json({ message: error });
   }

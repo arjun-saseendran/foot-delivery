@@ -14,7 +14,7 @@ const addFood = async (req, res) => {
     const food = new Food({ title, category, price, description });
     food.save()
 
-    res.status(201).json({ message: "Food added" });
+    res.status(201).json({ message: "Created" });
   } catch (error) {
     res.status(400).json({ message: error });
   }
